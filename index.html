@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vladimir & Maday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-content">
+        <h1>Vladimir & Maday</h1>
+        <p>¡Nos casamos!</p>
+        <span class="date">7 • Febrero • 2026</span>
+
+        <div id="countdown"></div>
+
+        <a class="btn pulse" href="confirmar.html">
+            Confirmar Asistencia
+        </a>
+        
+    </div>
+</header>
+
+<script>
+const weddingDate = new Date("February 7, 2026 16:00:00").getTime();
+const countdown = document.getElementById("countdown");
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    countdown.innerHTML = `${days} días · ${hours} h · ${minutes} min`;
+}, 1000);
+</script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const nombre = params.get("nombre");
+
+if (nombre) {
+    document.querySelector("p").innerText = `Querida ${nombre}, ¡nos casamos!`;
+}
+</script>
+
+
+</body>
+<audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+</html>

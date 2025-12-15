@@ -1,0 +1,91 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #faf7f2;
+    text-align: center;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486')
+    center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+    position: relative;
+    color: #fff;
+    padding: 25px;
+    max-width: 400px;
+}
+
+/* Textos */
+h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+p { font-size: 1.2rem; }
+
+.date {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#countdown {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* BOTÓN */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: #d6bfa8;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 35px;
+    font-weight: bold;
+}
+
+.btn.no {
+    background: #999;
+}
+
+/* Animación suave */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* CONFIRMAR / GRACIAS */
+.confirmacion {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmacion div {
+    background: #fff;
+    padding: 35px;
+    border-radius: 20px;
+}
