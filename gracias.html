@@ -24,11 +24,14 @@ const titulo = document.getElementById("titulo");
 const mensaje = document.getElementById("mensaje");
 
 if (respuesta === "si") {
-    titulo.innerText = `¡Gracias ${nombre}! 💖`;
+    titulo.innerText = `¡Gracias! 💖`;
     mensaje.innerText = "Estamos felices de contar contigo en nuestro gran día.";
-} else {
-    titulo.innerText = `Gracias ${nombre} 💐`;
+} else if (respuesta === "no") {
+    titulo.innerText = `¡Gracias!💐`;
     mensaje.innerText = "Agradecemos mucho tu tiempo y cariño. Te llevamos en el corazón.";
+} else {
+    titulo.innerText = "Gracias";
+    mensaje.innerText = "Tu respuesta ha sido registrada.";
 }
 </script>
 
