@@ -1,68 +1,108 @@
-* { box-sizing: border-box; }
+/* ===============================
+   RESET Y BASE
+================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    margin: 0;
-    font-family: Georgia, serif;
+    font-family: "Georgia", serif;
     background: #faf7f2;
+    color: #ffffff;
     text-align: center;
 }
 
-/* HERO */
+/* ===============================
+   HERO (IMAGEN DE FONDO)
+================================ */
 .hero {
     min-height: 100vh;
-    background: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486')
-    center/cover no-repeat;
+    background: url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486")
+        center/cover no-repeat;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
+/* Oscurecer imagen */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
 }
 
+/* ===============================
+   CONTENIDO
+================================ */
 .hero-content {
     position: relative;
-    color: #fff;
-    padding: 25px;
-    max-width: 400px;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
 }
 
-/* Textos */
+/* ===============================
+   TEXTOS
+================================ */
 h1 {
-    font-size: 2.8rem;
-    margin: 0;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
 }
-p { font-size: 1.2rem; }
 
-.date {
-    display: block;
+.hero-content p {
+    font-size: 1.1rem;
     margin-bottom: 10px;
 }
 
-#countdown {
-    margin-bottom: 25px;
-    font-size: 1.1rem;
-}
-
-/* BOTÓN */
-.btn {
+.date {
+    font-size: 1.05rem;
     display: block;
-    width: 100%;
-    padding: 16px;
-    background: #d6bfa8;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 35px;
-    font-weight: bold;
+    margin-bottom: 6px;
 }
 
-.btn.no {
-    background: #999;
+/* ===============================
+   CONTADOR
+================================ */
+#countdown {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin: 20px 0 16px;
+    letter-spacing: 1px;
+}
+
+/* ===============================
+   INFO EVENTO
+================================ */
+.event-info p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.event-time,
+.event-location {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* ===============================
+   BOTÓN
+================================ */
+.btn {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 14px 32px;
+    background: #d6bfa8;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 /* Animación suave */
@@ -76,16 +116,40 @@ p { font-size: 1.2rem; }
     100% { transform: scale(1); }
 }
 
-/* CONFIRMAR / GRACIAS */
+/* ===============================
+   CONFIRMAR / GRACIAS
+================================ */
 .confirmacion {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: #faf7f2;
+    color: #4a4a4a;
 }
 
 .confirmacion div {
-    background: #fff;
-    padding: 35px;
-    border-radius: 20px;
+    background: #ffffff;
+    padding: 30px 22px;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    max-width: 360px;
+    width: 100%;
+}
+
+.confirmacion h2 {
+    margin-bottom: 12px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-content {
+        max-width: 450px;
+    }
 }

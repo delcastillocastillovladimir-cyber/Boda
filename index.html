@@ -12,14 +12,28 @@
     <div class="hero-content">
         <h1>Vladimir & Maday</h1>
         <p>¡Nos casamos!</p>
-        <span class="date">7 • Febrero • 2026</span>
+        
+         <div id="countdown"></div>
 
-        <div id="countdown"></div>
+        <!-- HORA Y DIRECCIÓN -->
+        <div class="event-info">
 
+            <p>
+                <span class="date">Sábado • 7 Febrero • 2026</span>
+            </p>
+            
+            <p class="event-time">🕑 Hora: <strong>14:00</strong></p>
+            <p class="event-location">
+                📍 6B Fountayne Rd,<br>
+                London N15 4QL
+            </p>
+            <p>
+                  <!-- BOTÓN -->
         <a class="btn pulse" href="confirmar.html">
             Confirmar Asistencia
         </a>
-        
+            </p>
+        </div>
     </div>
 </header>
 
@@ -31,11 +45,18 @@ setInterval(() => {
     const now = new Date().getTime();
     const diff = weddingDate - now;
 
+     if (diff <= 0) {
+        countdown.innerHTML = "¡Hoy es el gran día! 💍";
+        return;
+    }
+
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
-    countdown.innerHTML = `${days} días · ${hours} h · ${minutes} min`;
+    countdown.innerHTML =
+        `${days} días · ${hours} h · ${minutes} min · ${seconds} s`;
 }, 1000);
 </script>
 <script>
